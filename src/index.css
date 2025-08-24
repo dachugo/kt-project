@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700&family=Shippori+Mincho+B1&display=swap");
+
+@font-face {
+  font-family: Yoppa-fude;
+  src: url("/assets/fonts/Yoppa-fude-font.ttf");
+}
+
+@import "tailwindcss";
+
+@theme {
+  --font-main-title: "Shippori Mincho B1", serif;
+  --font-main-text: "Mohave", serif;
+  --font-doto: "Yoppa-fude", sans-serif;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 100dvw;
+    overflow-x: hidden;
+    height: 100%;
+    background: #f3efec;
+    user-select: none;
+  }
+}
