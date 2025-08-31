@@ -3,6 +3,7 @@ export const kodoTakaiSm: string = "/assets/text/KODOTAKAI_SM.svg";
 export const imagen20: string = "/assets/text/20.svg";
 export const giraText: string = "/assets/text/GIRA.svg";
 export const cuentaText: string = "/assets/text/CUENTA.svg";
+export const planesText: string = "/assets/text/PLANES.svg";
 
 export const eagleSculpture: string = "/assets/eagle Sculpture.svg";
 export const mainKtLogo: string = "/assets/mainKodoTakaiLogo.svg";

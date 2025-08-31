@@ -20,7 +20,8 @@ lg:w-[500px] w-[300px] h-auto z-20 scale-x-[-1] lg:scale-x-[1] lg:-rotate-0 -rot
       <img
         src={japaneseCherryTree}
         alt="Japanese Cherry Tree"
-        className="absolute top-1/2 right-0 -translate-y-1/2 lg:translate-x-[330px] translate-x-[170px] 
+        className="absolute top-1/2 right-0 -translate-y-1/2 lg:translate-x-[330px] translate-x-[170px] md:translate-x-[270px] 
+
              lg:w-[700px] w-[700px] h-auto z-20 
              lg:-rotate-[115deg] -rotate-[105deg]"
       />
