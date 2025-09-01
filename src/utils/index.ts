@@ -3,6 +3,7 @@ export const kodoTakaiSm: string = "/assets/text/KODOTAKAI_SM.svg";
 export const imagen20: string = "/assets/text/20.svg";
 export const giraText: string = "/assets/text/GIRA.svg";
 export const cuentaText: string = "/assets/text/CUENTA.svg";
+export const eventoText: string = "/assets/text/DEL EVENTO.svg";
 export const planesText: string = "/assets/text/PLANES.svg";
 
 export const eagleSculpture: string = "/assets/eagle Sculpture.svg";
@@ -10,6 +11,7 @@ export const mainKtLogo: string = "/assets/mainKodoTakaiLogo.svg";
 export const japaneseStork: string = "/assets/Japanese stork.svg";
 export const japaneseSugarcane_1: string = "/assets/japanese Sugarcane 1.svg";
 export const japaneseSugarcane_2: string = "/assets/japanese Sugarcane 2.svg";
+export const japaneseSugarcane_3: string = "/assets/japaneseSugarcaneBig.svg";
 export const japaneseCherryTree: string = "/assets/japaneseCherryTree.svg";
 export const logoKodoTakai: string = "/assets/logoKT.svg";
 export const mountainsBg_1: string = "/assets/Mountains Background (1).svg";

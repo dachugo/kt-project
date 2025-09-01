@@ -4,6 +4,7 @@ import Tour from "./components/Tour";
 import CountDownText from "./components/CountDownText";
 import CountDown from "./components/CountDown";
 import Planes from "./components/Planes";
+import Sponsors from "./components/Sponsors";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <CountDownText />
       <CountDown />
       <Planes />
+      <Sponsors />
     </>
   );
 }

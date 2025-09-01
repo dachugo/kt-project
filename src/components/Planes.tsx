@@ -10,7 +10,7 @@ export default function Planes() {
             <img src={planesText} alt="" className="w-auto lg:h-35 h-20" />
             <div className="flex flex-row items-center">
               <div className="h-[1px] lg:w-[120px] w-[60px] bg-white"></div>
-              <p className="font-main-title lg:text-[30px] text-[15px] px-2 lg:px-5 text-white">
+              <p className="font-main-title lg:text-[30px] text-[15px] px-git 2 lg:px-5 text-white">
                 DE PATROCINIO
               </p>
               <div className="h-[1px] lg:w-[120px] w-[60px] bg-white"></div>
@@ -35,7 +35,7 @@ export default function Planes() {
           </div>
 
           <div className="w-full items-center flex flex-col">
-            <button className="bg-[#D9D9D9] w-[95%] lg:w-[25%] h-15 rounded-xl mt-5">
+            <button className="bg-gradient-to-b from-[#ff7878] from-13% cursor-pointer to-[#ffeaea] to-100% w-[95%] lg:w-[25%] h-15 rounded-xl mt-5">
               Boton 4
             </button>
           </div>
