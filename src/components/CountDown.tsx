@@ -37,22 +37,22 @@ export default function CountDown() {
           <div className="w-[100%] lg:w-[70%] h-4 rounded-full bg-[linear-gradient(to_left,#FF7372_33%,#B14D4C_100%)] mb-3"></div>
 
           <div className="flex flex-row lg:gap-15 gap-10 my-5 mt-8 w-full justify-center">
-            <button className="bg-gradient-to-b from-[#ff6d6d] from-33% to-[#7a2a29] to-100% lg:w-60 w-full h-20 rounded-xl">
+            <button className="bg-gradient-to-b from-[#ff6d6d] from-33% to-[#7a2a29] to-100% lg:w-60 w-full h-20 rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:scale-103">
               Boton 1
             </button>
-            <button className="bg-[#777474] lg:w-60 w-full h-20 rounded-xl">
+            <button className="bg-[#777474] lg:w-60 w-full h-20 rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:scale-103">
               Boton 2
             </button>
           </div>
 
           <div className="flex lg:flex-row flex-col w-full lg:gap-15 gap-5 my-4 justify-center">
-            <button className="bg-[#505050] lg:w-60 w-full h-20 rounded-xl">
+            <button className="bg-[#505050] lg:w-60 w-full h-20 rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:scale-103">
               Boton 1
             </button>
-            <button className="bg-[#505050] lg:w-60 w-full h-20 rounded-xl">
+            <button className="bg-[#505050] lg:w-60 w-full h-20 rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:scale-103">
               Boton 2
             </button>
-            <button className="bg-[#505050] lg:w-60 w-full h-20 rounded-xl">
+            <button className="bg-[#505050] lg:w-60 w-full h-20 rounded-xl cursor-pointer transition-all duration-300 ease-in-out hover:scale-103">
               Boton 3
             </button>
           </div>

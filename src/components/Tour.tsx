@@ -3,7 +3,7 @@ import { giraText, japaneseCherryTree } from "../utils";
 
 export default function Tour() {
   return (
-    <section className="relative w-full top-0 h-80% overflow-hidden lg:px-32 px-10 mb-20 lg:mb-30">
+    <section id="tour" className="relative w-full top-0 h-80% overflow-hidden lg:px-32 px-10 mb-20 lg:mb-30">
       <img
         src={japaneseCherryTree}
         alt="Japanese Cherry Tree"

@@ -4,7 +4,7 @@ import { japaneseSugarcane_3, eventoText } from "../utils";
 export default function Sponsors() {
   return (
     <>
-      <section className="relative w-full lg:h-[55rem] h-[70rem] overflow-hidden z-10">
+      <section id="sponsors" className="relative w-full lg:h-[55rem] h-[70rem] overflow-hidden z-10">
         <img
           src={japaneseSugarcane_3}
           alt=""
@@ -42,7 +42,7 @@ export default function Sponsors() {
                 key={i}
                 className="w-[10rem] h-[10rem] bg-[#727272] flex items-center justify-center text-white 
                  transition-all duration-300 cursor-pointer 
-                 hover:bg-[#9e9e9e] active:bg-[#4a4a4a]"
+                 hover:scale-103 active:scale-100"
               >
                 {i + 1}
               </div>
@@ -61,7 +61,7 @@ export default function Sponsors() {
               </div>
 
               <div className="w-full md:w-auto">
-                <button className="font-main-title w-full md:w-auto bg-gradient-to-b from-[#ce4747] from-33% to-[#5c1e1d] to-100% text-white py-3 px-10 rounded-lg transition duration-200 cursor-pointer hover:shadow-lg">
+                <button className="font-main-title w-full md:w-auto bg-gradient-to-b from-[#ce4747] from-33% to-[#5c1e1d] to-100% text-white py-3 px-10 rounded-lg transition duration-200 cursor-pointer hover:scale-103">
                   Ser Sponsor
                 </button>
               </div>

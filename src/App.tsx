@@ -5,6 +5,7 @@ import CountDownText from "./components/CountDownText";
 import CountDown from "./components/CountDown";
 import Planes from "./components/Planes";
 import Sponsors from "./components/Sponsors";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <CountDown />
       <Planes />
       <Sponsors />
+      <Footer />
     </>
   );
 }
