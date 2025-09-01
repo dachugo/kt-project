@@ -1,4 +1,3 @@
-import React from "react";
 import { mainKtLogo, mountainsFooter } from "../utils";
 
 export default function Footer() {

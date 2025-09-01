@@ -1,4 +1,3 @@
-import React from "react";
 import { japaneseSugarcane_3, eventoText } from "../utils";
 
 export default function Sponsors() {

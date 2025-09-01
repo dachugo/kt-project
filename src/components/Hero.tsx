@@ -1,11 +1,7 @@
-import React from "react";
 import {
-  kodoTakaiMd,
-  kodoTakaiSm,
   mountainsBg_1,
   mountainsBg_2,
   mountainsBg_3,
-  eagleSculpture,
   imagen20,
   mainKtLogo,
 } from "../utils";

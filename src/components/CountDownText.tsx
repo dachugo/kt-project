@@ -1,4 +1,3 @@
-import React from "react";
 import { cuentaText, japaneseStork, mountainsFooter } from "../utils";
 
 export default function CountDownText() {

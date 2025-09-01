@@ -1,4 +1,3 @@
-import React from "react";
 import { planesText } from "../utils";
 
 export default function Planes() {

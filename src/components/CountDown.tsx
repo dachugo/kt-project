@@ -1,4 +1,3 @@
-import React from "react";
 import { japaneseSugarcane_1, japaneseSugarcane_2 } from "../utils";
 
 export default function CountDown() {

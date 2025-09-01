@@ -1,4 +1,3 @@
-import React from "react";
 import { giraText, japaneseCherryTree } from "../utils";
 
 export default function Tour() {
