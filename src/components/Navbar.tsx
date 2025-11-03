@@ -10,25 +10,27 @@ export default function Navbar() {
       setIsScrolled(scrollTop > 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <header className={`w-full sticky top-0 z-100 transition-all duration-300 ${
-      isScrolled ? 'bg-white/70 backdrop-blur-md' : 'bg-transparent'
-    }`}>
+    <header
+      className={`w-full sticky top-0 z-100 transition-all duration-300 ${
+        isScrolled ? "bg-white/50 backdrop-blur-md" : "bg-transparent"
+      }`}
+    >
       <div className="mx-auto max-w-screen-2xl md:px-13 px-5">
-        <div className="flex h-20 items-center justify-between">
-          <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        <div className="flex h-15 items-center justify-between">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-200 cursor-pointer"
           >
             <img
@@ -42,20 +44,20 @@ export default function Navbar() {
             className="flex items-center gap-6 md:gap-20 text-sm md:text-base"
             aria-label="Main"
           >
-            <button 
-              onClick={() => scrollToSection('tour')}
+            <button
+              onClick={() => scrollToSection("tour")}
               className="font-main-title hover:opacity-80 transition-opacity duration-200 cursor-pointer"
             >
               Gira
             </button>
-            <button 
-              onClick={() => scrollToSection('planes')}
+            <button
+              onClick={() => scrollToSection("planes")}
               className="font-main-title hover:opacity-80 transition-opacity duration-200 cursor-pointer"
             >
               Plans
             </button>
-            <button 
-              onClick={() => scrollToSection('sponsors')}
+            <button
+              onClick={() => scrollToSection("sponsors")}
               className="font-main-title hover:opacity-80 transition-opacity duration-200 cursor-pointer"
             >
               Sponsors

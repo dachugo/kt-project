@@ -22,21 +22,10 @@ export default function Hero() {
           top-[-60px] sm:top-[-120px] md:top-[-200px] lg:top-[-350px] xl:top-[-620px]"
           alt=""
         />
-        {/* <img
-          src={kodoTakaiSm}
-          alt=""
-          className="absolute left-1/2 -translate-x-1/2 w-[55%] h-auto z-15 
-          top-[30px] md:hidden"
-        />
-        <img
-          src={kodoTakaiMd}
-          alt=""
-          className="absolute left-1/2 -translate-x-1/2 h-auto z-15 opacity-10
-          hidden md:block w-[80%] md:top-[20px] lg:w-[85%] lg:top-5 xl:w-[90%]"
-        /> */}
+
         <img
           src={mountainsBg_1}
-          className="absolute left-1/2 -translate-x-1/2 w-full h-auto z-20 
+          className="absolute left-1/2 blur-xs -translate-x-1/2 w-full h-auto z-20 
           top-[125px] sm:top-[80px] md:top-0 lg:top-[-120px] xl:top-[-240px]"
           alt=""
         />
@@ -45,14 +34,14 @@ export default function Hero() {
       <div className="absolute inset-0 z-30 flex justify-center items-center">
         <img
           src={mainKtLogo}
-          alt="Eagle Sculpture"
+          alt="Logo Kodo Takai"
           className="
       relative h-auto mx-auto
-      w-[55%] translate-y-[-150px]   /* centrado en móviles pero bajado un poco */
-      sm:w-[50%] sm:translate-y-0 sm:bottom-[100px] 
-      md:w-[45%] md:bottom-[90px] 
-      lg:w-[40%] lg:bottom-[70px]
-      xl:w-[35%] xl:bottom-[50px] 
+      w-[50%] translate-y-[-150px]   /* centrado en móviles pero bajado un poco */
+      sm:w-[45%] sm:translate-y-0 sm:bottom-[100px] 
+      md:w-[40%] md:bottom-[90px] 
+      lg:w-[35%] lg:bottom-[70px]
+      xl:w-[30%] xl:bottom-[50px] 
     "
         />
       </div>
@@ -66,7 +55,7 @@ export default function Hero() {
         "
       >
         <div>
-          <h1 className="text-[2.3rem] leading-[35px] font-main-title font-medium text-center lg:text-left lg:text-4xl">
+          <h1 className="text-[2.3rem] leading-[35px] font-main-title mt-[-50px] font-medium text-center lg:text-left lg:text-4xl">
             Competencia Multi-Ciudad
           </h1>
           <h1 className="md:text-lg text-[0.9rem] font-main-title text-center lg:text-left mt-2">
