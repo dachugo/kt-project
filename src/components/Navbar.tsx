@@ -16,8 +16,17 @@ export default function Navbar() {
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    const header = document.querySelector('header');
+    if (element && header) {
+      const headerHeight = header.offsetHeight;
+      const offset = 30;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight - offset;
+
+      window.scrollTo({
+        top: Math.max(0, offsetPosition), // Asegura que no sea negativo
+        behavior: "smooth"
+      });
     }
   };
 

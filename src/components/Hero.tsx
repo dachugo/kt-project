@@ -4,6 +4,8 @@ import {
   mountainsBg_3,
   imagen20,
   mainKtLogo,
+  kodoTakaiMd,
+  kodoTakaiSm,
 } from "../utils";
 
 export default function Hero() {
@@ -24,6 +26,19 @@ export default function Hero() {
         />
 
         <img
+          src={kodoTakaiSm}
+          alt=""
+          className="absolute left-1/2 -translate-x-1/2 w-[55%] h-auto z-15 
+          top-[30px] md:hidden"
+        />
+        <img
+          src={kodoTakaiMd}
+          alt=""
+          className="absolute left-1/2 -translate-x-1/2 h-auto z-15 opacity-100
+          hidden md:block w-[80%] md:top-[20px] lg:w-[85%] lg:top-2 xl:w-[90%]"
+        />
+
+        <img
           src={mountainsBg_1}
           className="absolute left-1/2 blur-xs -translate-x-1/2 w-full h-auto z-20 
           top-[125px] sm:top-[80px] md:top-0 lg:top-[-120px] xl:top-[-240px]"
@@ -37,11 +52,11 @@ export default function Hero() {
           alt="Logo Kodo Takai"
           className="
       relative h-auto mx-auto
-      w-[50%] translate-y-[-150px]   /* centrado en móviles pero bajado un poco */
-      sm:w-[45%] sm:translate-y-0 sm:bottom-[100px] 
+      w-[55%] translate-y-[-120px]   /* centrado en móviles pero bajado un poco */
+      sm:w-[50%] sm:translate-y-0 sm:bottom-[100px] 
       md:w-[40%] md:bottom-[90px] 
-      lg:w-[35%] lg:bottom-[70px]
-      xl:w-[30%] xl:bottom-[50px] 
+      lg:w-[35%] lg:bottom-[40px]
+      xl:w-[30%] xl:bottom-[10px] 
     "
         />
       </div>
