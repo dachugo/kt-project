@@ -18,6 +18,7 @@ export default function Hero() {
           top-[-140px] sm:top-[-220px] md:top-[-300px] lg:top-[-380px] xl:top-[-570px] opacity-90"
           alt=""
         />
+
         <img
           src={mountainsBg_2}
           className="absolute left-1/2 -translate-x-1/2 w-full h-auto z-10 
@@ -35,7 +36,7 @@ export default function Hero() {
           src={kodoTakaiMd}
           alt=""
           className="absolute left-1/2 -translate-x-1/2 h-auto z-15 opacity-100
-          hidden md:block w-[80%] md:top-[20px] lg:w-[85%] lg:top-2 xl:w-[90%]"
+          hidden md:block w-[80%] md:top-[20px] lg:w-[85%] lg:top-3 xl:w-[90%]"
         />
 
         <img

@@ -1,5 +1,6 @@
 import { logoKodoTakai } from "../utils";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,18 +17,75 @@ export default function Navbar() {
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    const header = document.querySelector('header');
+    const header = document.querySelector("header");
     if (element && header) {
       const headerHeight = header.offsetHeight;
       const offset = 30;
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerHeight - offset;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerHeight - offset;
 
       window.scrollTo({
-        top: Math.max(0, offsetPosition), // Asegura que no sea negativo
-        behavior: "smooth"
+        top: Math.max(0, offsetPosition),
+        behavior: "smooth",
       });
     }
+  };
+
+  const DURATION = 0.2;
+  const STAGGER = 0.025;
+
+  const FlipLink = ({ children }: { children: string }) => {
+    return (
+      <motion.a
+        initial="initial"
+        whileHover="hovered"
+        className="relative block overflow-hidden whitespace-nowrap"
+      >
+        <div>
+          {children.split("").map((l, i) => {
+            return (
+              <motion.span
+                variants={{
+                  initial: { y: 0 },
+                  hovered: { y: "-100%" },
+                }}
+                transition={{
+                  duration: DURATION,
+                  ease: "easeInOut",
+                  delay: STAGGER * i,
+                }}
+                className="inline-block"
+                key={i}
+              >
+                {l}
+              </motion.span>
+            );
+          })}
+        </div>
+        <div className="absolute inset-0">
+          {children.split("").map((l, i) => {
+            return (
+              <motion.span
+                variants={{
+                  initial: { y: "100%" },
+                  hovered: { y: 0 },
+                }}
+                transition={{
+                  duration: DURATION,
+                  ease: "easeInOut",
+                  delay: STAGGER * i,
+                }}
+                className="inline-block"
+                key={i}
+              >
+                {l}
+              </motion.span>
+            );
+          })}
+        </div>
+      </motion.a>
+    );
   };
 
   return (
@@ -57,19 +115,19 @@ export default function Navbar() {
               onClick={() => scrollToSection("tour")}
               className="font-main-title hover:opacity-80 transition-opacity duration-200 cursor-pointer"
             >
-              Gira
+              <FlipLink>Gira</FlipLink>
             </button>
             <button
               onClick={() => scrollToSection("planes")}
               className="font-main-title hover:opacity-80 transition-opacity duration-200 cursor-pointer"
             >
-              Plans
+              <FlipLink>Planes</FlipLink>
             </button>
             <button
               onClick={() => scrollToSection("sponsors")}
               className="font-main-title hover:opacity-80 transition-opacity duration-200 cursor-pointer"
             >
-              Sponsors
+              <FlipLink>Sponsors</FlipLink>
             </button>
           </nav>
         </div>
