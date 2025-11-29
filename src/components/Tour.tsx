@@ -1,5 +1,6 @@
 import { giraText, japaneseCherryTree } from "../utils";
 import { HiInformationCircle, HiCalendar } from "react-icons/hi";
+import TextAnimation from "./TextAnimation";
 
 export default function Tour() {
   return (
@@ -38,11 +39,13 @@ lg:w-[500px] w-[300px] h-auto z-20 scale-x-[-1] lg:scale-x-[1] lg:-rotate-0 -rot
           />
 
           <div className="flex flex-col items-center gap-2 w-full">
-            <div className="flex w-full font-main-title font-medium lg:text-xl text-lg lg:py-5 py-0 overflow-hidden">
-              Mantente al tanto de nuestras próximas presentaciones y eventos en
-              vivo. ¡No te pierdas la oportunidad de vivir la experiencia Kodo
-              Takai en persona!
-            </div>
+            <TextAnimation>
+              <div className="flex w-full font-main-title font-medium lg:text-xl text-lg lg:py-5 py-0 overflow-hidden">
+                Mantente al tanto de nuestras próximas presentaciones y eventos
+                en vivo. ¡No te pierdas la oportunidad de vivir la experiencia
+                Kodo Takai en persona!
+              </div>
+            </TextAnimation>
 
             <div className="flex items-center gap-5 w-full mt-2">
               <button className="bg-[#a04545] lg:px-10 duration-400 font-medium font-main-title lg:py-3 px-3 py-3 text-sm lg:text-md text-amber-50 rounded-lg hover:bg-[#391515] cursor-pointer flex items-center gap-2 whitespace-nowrap">

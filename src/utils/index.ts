@@ -17,3 +17,10 @@ export const mountainsBg_1: string = "/assets/Mountains Background (1).webp";
 export const mountainsBg_2: string = "/assets/Mountains Background (2).webp";
 export const mountainsBg_3: string = "/assets/Mountains Background (3).webp";
 export const mountainsFooter: string = "/assets/mountainsFooter.svg";
+
+export const k_text: string = "/assets/kodotakai_text/K (1).webp";
+export const o_text: string = "/assets/kodotakai_text/O (1).webp";
+export const d_text: string = "/assets/kodotakai_text/D (1).webp";
+export const t_text: string = "/assets/kodotakai_text/T (1).webp";
+export const a_text: string = "/assets/kodotakai_text/A (1).webp";
+export const i_text: string = "/assets/kodotakai_text/I (1).webp";

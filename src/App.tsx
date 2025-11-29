@@ -1,3 +1,4 @@
+import { ReactLenis } from "lenis/react";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Tour from "./components/Tour";
@@ -9,7 +10,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <>
+    <ReactLenis root>
       <Navbar />
       <Hero />
       <Tour />
@@ -18,7 +19,7 @@ function App() {
       <Planes />
       <Sponsors />
       <Footer />
-    </>
+    </ReactLenis>
   );
 }
 

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   mountainsBg_1,
   mountainsBg_2,
@@ -6,9 +8,49 @@ import {
   mainKtLogo,
   kodoTakaiMd,
   kodoTakaiSm,
+  k_text,
+  o_text,
+  d_text,
+  t_text,
+  a_text,
+  i_text,
 } from "../utils";
 
+import TextAnimation from "./TextAnimation";
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { SplitText } from "gsap/SplitText";
+
+gsap.registerPlugin(SplitText);
+
 export default function Hero() {
+  const kodoTakaiSmRef = useRef(null);
+
+  useEffect(() => {
+    if (kodoTakaiSmRef.current) {
+      const container = kodoTakaiSmRef.current as HTMLDivElement;
+      const images = container.querySelectorAll("img");
+
+      // Establecer estado inicial en cada imagen: invisible y más abajo
+      gsap.set(images, {
+        opacity: 0,
+        y: 200,
+      });
+
+      // Animar cada imagen con stagger
+      gsap.to(images, {
+        delay: 0.5,
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "back.out(1)",
+        stagger: {
+          amount: 0.2,
+        },
+      });
+    }
+  }, []);
+
   return (
     <section className="relative w-full h-screen overflow-hidden">
       <div className="relative w-full h-full">
@@ -32,12 +74,72 @@ export default function Hero() {
           className="absolute left-1/2 -translate-x-1/2 w-[55%] h-auto z-15 
           top-[30px] md:hidden"
         />
-        <img
+        {/* <img
+          ref={kodoTakaiSmRef}
           src={kodoTakaiMd}
           alt=""
-          className="absolute left-1/2 -translate-x-1/2 h-auto z-15 opacity-100
+          className="absolute left-1/2 -translate-x-1/2 h-auto z-15 opacity-0
           hidden md:block w-[80%] md:top-[20px] lg:w-[85%] lg:top-3 xl:w-[90%]"
-        />
+        /> */}
+
+        <div
+          ref={kodoTakaiSmRef}
+          className="absolute left-1/2 -translate-x-1/2 h-auto z-15 gap-3
+          hidden md:flex md:items-center md:justify-center
+          md:top-[20px] lg:top-[20px]"
+        >
+          {/* KODO */}
+          <img
+            src={k_text}
+            alt="K"
+            className="h-[80px] md:h-[100px] lg:h-[120px] xl:h-[250px] w-auto object-contain"
+          />
+          <img
+            src={o_text}
+            alt="O"
+            className="h-[80px] md:h-[100px] lg:h-[120px] xl:h-[250px] w-auto object-contain"
+          />
+          <img
+            src={d_text}
+            alt="D"
+            className="h-[80px] md:h-[100px] lg:h-[120px] xl:h-[240px] w-auto object-contain"
+          />
+          <img
+            src={o_text}
+            alt="O"
+            className="h-[80px] md:h-[100px] lg:h-[120px] xl:h-[250px] w-auto object-contain"
+          />
+
+          {/* Espacio entre palabras */}
+          <div className="w-[20px] md:w-[30px] lg:w-[40px] xl:w-[1150px]"></div>
+
+          {/* TAKAI */}
+          <img
+            src={t_text}
+            alt="T"
+            className="h-[80px] md:h-[100px] lg:h-[120px] xl:h-[250px] w-auto object-contain"
+          />
+          <img
+            src={a_text}
+            alt="A"
+            className="h-[80px] md:h-[100px] lg:h-[120px] xl:h-[250px] w-auto object-contain"
+          />
+          <img
+            src={k_text}
+            alt="K"
+            className="h-[80px] md:h-[100px] lg:h-[120px] xl:h-[250px] w-auto object-contain"
+          />
+          <img
+            src={a_text}
+            alt="A"
+            className="h-[80px] md:h-[100px] lg:h-[120px] xl:h-[250px] w-auto object-contain"
+          />
+          <img
+            src={i_text}
+            alt="I"
+            className="h-[80px] md:h-[100px] lg:h-[120px] xl:h-[250px] w-auto object-contain"
+          />
+        </div>
 
         <img
           src={mountainsBg_1}
@@ -57,7 +159,7 @@ export default function Hero() {
       sm:w-[50%] sm:translate-y-0 sm:bottom-[100px] 
       md:w-[40%] md:bottom-[90px] 
       lg:w-[35%] lg:bottom-[40px]
-      xl:w-[30%] xl:bottom-[10px] 
+      xl:w-[30%] xl:bottom-[15px] 
     "
         />
       </div>
@@ -71,25 +173,33 @@ export default function Hero() {
         "
       >
         <div>
-          <h1 className="text-[2.3rem] leading-[35px] font-main-title mt-[-50px] font-medium text-center lg:text-left lg:text-4xl">
-            Competencia Multi-Ciudad
-          </h1>
-          <h1 className="md:text-lg text-[0.9rem] font-main-title text-center lg:text-left mt-2">
-            Conectando desarrolladores y profesionales de <br />
-            tecnología en Colombia
-          </h1>
+          <TextAnimation delay={0.5}>
+            <h1 className="text-[2.3rem] leading-[35px] font-main-title mt-[-50px] font-medium text-center lg:text-left lg:text-4xl">
+              Competencia Multi-Ciudad
+            </h1>
+          </TextAnimation>
+          <TextAnimation delay={0.5}>
+            <h1 className="md:text-lg text-[0.9rem] font-main-title text-center lg:text-left mt-2">
+              Conectando desarrolladores y profesionales de <br />
+              tecnología en Colombia
+            </h1>
+          </TextAnimation>
         </div>
 
         <div className="flex items-center gap-3 pt-10">
           <img src={imagen20} alt="20" className="w-[80px] h-auto" />
           <div className="h-[60px] w-[1px] bg-black"></div>
           <div className="flex flex-col ml-1 leading-tight text-left">
-            <span className="text-sm md:text-lg font-main-title tracking-wide">
-              DE
-            </span>
-            <span className="text-sm md:text-2xl font-main-title tracking-wide">
-              OCTUBRE
-            </span>
+            <TextAnimation>
+              <span className="text-sm md:text-lg font-main-title tracking-wide">
+                DE
+              </span>
+            </TextAnimation>
+            <TextAnimation>
+              <span className="text-sm md:text-2xl font-main-title tracking-wide">
+                OCTUBRE
+              </span>
+            </TextAnimation>
           </div>
         </div>
       </div>
