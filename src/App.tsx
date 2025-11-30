@@ -57,7 +57,7 @@ function AppContent() {
           // Animar landing: scale
           gsap.to(landingRef.current, {
             transform: "translate(-50%, -50%) scale(1)",
-            duration: 2.5,
+            duration: 2,
             ease: "expo.out",
             delay: 0.25,
           });
@@ -65,7 +65,7 @@ function AppContent() {
           // Animar overlay: clipPath se cierra desde arriba
           gsap.to(landingOverlayRef.current, {
             clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-            duration: 1.5,
+            duration: 2,
             delay: 0.5,
             ease: "expo.inOut",
           });
