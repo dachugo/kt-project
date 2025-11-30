@@ -6,6 +6,7 @@ export const cuentaText: string = "/assets/text/CUENTA.svg";
 export const eventoText: string = "/assets/text/DEL EVENTO.svg";
 export const planesText: string = "/assets/text/PLANES.svg";
 
+export const mainBlackLogo: string = "/assets/text/kd-black-main-logo.webp";
 export const mainKtLogo: string = "/assets/mainKodoTakaiLogo.webp";
 export const japaneseStork: string = "/assets/Japanese stork.svg";
 export const japaneseSugarcane_1: string = "/assets/japanese Sugarcane 1.svg";

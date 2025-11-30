@@ -39,7 +39,7 @@ export default function Hero() {
 
       // Animar cada imagen con stagger
       gsap.to(images, {
-        delay: 0.5,
+        delay: 2.5,
         opacity: 1,
         y: 0,
         duration: 0.5,
@@ -173,12 +173,12 @@ export default function Hero() {
         "
       >
         <div>
-          <TextAnimation delay={0.5}>
+          <TextAnimation delay={2.5}>
             <h1 className="text-[2.3rem] leading-[35px] font-main-title mt-[-50px] font-medium text-center lg:text-left lg:text-4xl">
               Competencia Multi-Ciudad
             </h1>
           </TextAnimation>
-          <TextAnimation delay={0.5}>
+          <TextAnimation delay={2.5}>
             <h1 className="md:text-lg text-[0.9rem] font-main-title text-center lg:text-left mt-2">
               Conectando desarrolladores y profesionales de <br />
               tecnología en Colombia
@@ -190,12 +190,12 @@ export default function Hero() {
           <img src={imagen20} alt="20" className="w-[80px] h-auto" />
           <div className="h-[60px] w-[1px] bg-black"></div>
           <div className="flex flex-col ml-1 leading-tight text-left">
-            <TextAnimation>
+            <TextAnimation delay={2.5}>
               <span className="text-sm md:text-lg font-main-title tracking-wide">
                 DE
               </span>
             </TextAnimation>
-            <TextAnimation>
+            <TextAnimation delay={2.5}>
               <span className="text-sm md:text-2xl font-main-title tracking-wide">
                 OCTUBRE
               </span>
