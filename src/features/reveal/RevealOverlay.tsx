@@ -6,12 +6,14 @@ import { mainBlackLogo } from "../../utils";
 
 interface RevealOverlayProps {
   onComplete: () => void;
-  duration?: number; // Duración en segundos (default: 3s para llegar a 100)
+  duration?: number;
+  isRevealed?: boolean;
 }
 
 export default function RevealOverlay({
   onComplete,
   duration = 3,
+  isRevealed = false,
 }: RevealOverlayProps) {
   const [countdown, setCountdown] = useState(0);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -19,11 +21,10 @@ export default function RevealOverlay({
   const imageRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
 
-  // Contador animado con incremento aleatorio (adaptado de JS vanilla a React)
   useEffect(() => {
     let currentValue = 0;
-    const updateInterval = 300; // Actualiza cada 300ms
-    const maxDuration = duration * 1000; // Convierte segundos a milisegundos
+    const updateInterval = 300;
+    const maxDuration = duration * 1000;
     const endValue = 100;
     const startTime = Date.now();
 
@@ -31,7 +32,6 @@ export default function RevealOverlay({
       const elapsedTime = Date.now() - startTime;
 
       if (elapsedTime < maxDuration) {
-        // Incremento aleatorio mientras no haya pasado el tiempo máximo
         currentValue = Math.min(
           currentValue + Math.floor(Math.random() * 30) + 10,
           endValue
@@ -39,7 +39,6 @@ export default function RevealOverlay({
         setCountdown(currentValue);
         setTimeout(updateCounter, updateInterval);
       } else {
-        // Cuando termina el tiempo, asegurar que llegue a 100
         setCountdown(100);
       }
     }
@@ -47,49 +46,54 @@ export default function RevealOverlay({
     updateCounter();
   }, [duration]);
 
-  // Cuando el contador llega a 100, animar hacia arriba y revelar landing
+  // Cuando el contador llega a 10 anima el logo
   useEffect(() => {
     if (countdown !== 100 || !countdownRef.current || !logoRef.current) return;
 
-    // Animar contador hacia arriba para que desaparezca por los límites del contenedor
-    gsap.to(countdownRef.current, {
-      y: -100,
-      opacity: 0,
-      duration: 0.3,
-      ease: "power2.in",
-    });
-
-    // Animar logo hacia arriba también
-    gsap.to(logoRef.current, {
-      y: -100,
-      opacity: 0,
-      duration: 0.3,
-      ease: "power2.in",
-      onStart: () => {
-        // Después de que el contador desaparezca, revelar landing
-        setTimeout(() => {
-          onComplete();
-          // Ocultar overlay después de un pequeño delay
-          if (overlayRef.current) {
-            overlayRef.current.style.display = "none";
-          }
-        }, 100);
+    //Sincroniza las animaciones
+    const tl = gsap.timeline({
+      onComplete: () => {
+        onComplete();
+        if (overlayRef.current) {
+          overlayRef.current.style.display = "none";
+        }
       },
     });
+
+    // Anima contador y logo hacia arriba en un 10
+    tl.to(countdownRef.current, {
+      y: -10,
+      opacity: 0,
+      duration: 0.1,
+      ease: "power2.out",
+    }).to(
+      logoRef.current,
+      {
+        y: -20,
+        opacity: 0,
+        duration: 0.1,
+        ease: "power2.out",
+      },
+      "<"
+    );
   }, [countdown, onComplete]);
+
+  if (isRevealed && countdown >= 100) {
+    return null;
+  }
 
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#F3EFEC]"
-      style={{ pointerEvents: countdown >= 100 ? "none" : "auto" }}
+      className="fixed inset-0 z-[99999] flex items-center justify-center bg-[#F3EFEC]"
+      style={{
+        pointerEvents: countdown >= 100 ? "none" : "auto",
+      }}
     >
-      {/* Imagen de fondo */}
       <div ref={imageRef} className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(220,38,38,0.1)_0%,_transparent_70%)]" />
       </div>
 
-      {/* Logo centrado independiente (invisible inicialmente, aparece con animación) */}
       <img
         ref={logoRef}
         src={mainBlackLogo}
@@ -97,7 +101,6 @@ export default function RevealOverlay({
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[70px] h-[70px] object-contain"
       />
 
-      {/* Contador posicionado independiente con overflow hidden para clip effect */}
       <div className="absolute top-[75%] left-1/2 -translate-x-1/2 z-10 w-[200px] h-[50px] overflow-hidden">
         <div
           ref={countdownRef}
